@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400&family=Rock+3D&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    font-family: "Rock 3D";
+    color:rgb(0, 0, 0);
+}
+:root {
+    --index: calc(1vw + 1vh);
+}
+/* .logo {
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    z-index: 1;
+    left: 40%;
+    top: 0;
+    filter: drop-shadow(0 0 1vw blue)
+} */
+.layers {
+    perspective: 50000px;
+    overflow: hidden;
+}
+.layers__container {
+    height: 51.5vw;
+    width: 100vw;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+}
+.layers__item {
+    position: fixed;
+    inset: -2vw;
+    background-size: cover;
+    background-position: center;
+}
+.layers-1 {
+    transform: translateZ(-10vw);
+}
+.layers-2 {
+    transform: translateZ(-1vw) rotate(10deg)  ;
+    background-repeat: no-repeat;
+    position:absolute;
+    max-width: 25vw;
+    max-height: 25vw;
+    left: 10vw;
+    top: 10vw;
+    filter: brightness(.7);
+}
+.layers-3 {
+    transform: translateZ(5vw);
+    position: absolute;
+    left:38vw;
+    top: 20vw;
+}
+.layers-4 {
+    transform: translateZ(40vw);
+}
+.layers-5 {
+    transform: translateZ(280px);
+    opacity: .2;
+    filter:drop-shadow(0 0 15px rgb(133, 133, 133));
+}
+.hero__content {
+    font-weight: 400;
+    font-size: 4vw;
+    text-shadow: 0px 0px 50px #2a4aff;
+}
+.snowflake {
+    position: absolute;
+    bottom: 0vw;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: fall linear infinite;
+    top: -10vw;
+    height: 10000%;
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
